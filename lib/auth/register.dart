@@ -186,19 +186,19 @@ class _RegisterPageState extends State<RegisterPage> {
                           formController.txtpass.currentState!.validate() &&
                           formController.username.currentState!.validate() &&
                           formController.txtcf.currentState!.validate()) {
-                        if (formController.txtpasss != formController.txtcff) {
-                          Get.snackbar(
-                              "Notification", "Fail to create an account");
-                        } else {
-                          controll.createAccount();
-                          DatabaseModel cloud = DatabaseModel(
-                            email: formController.txtnamee.text,
-                            name: formController.usernamee.text,
-                            password: formController.txtpasss.text,
-                          );
-                          _db.addData(cloud);
-                          Get.snackbar("Notification", "Success");
-                        }
+                        // if (formController.txtpasss != formController.txtcff) {
+                        //   Get.snackbar(
+                        //       "Notification", "Fail to create an account");
+                        // }
+
+                        controll.createAccount();
+                        DatabaseModel cloud = DatabaseModel(
+                          email: formController.txtnamee.text,
+                          name: formController.usernamee.text,
+                          password: formController.txtpasss.text,
+                        );
+                        _db.addData(cloud);
+                        Get.snackbar("Notification", "Success");
                       } else {
                         return null;
                       }
